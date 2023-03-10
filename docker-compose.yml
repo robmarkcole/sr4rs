@@ -1,0 +1,9 @@
+version: '3'
+services:
+  otbtf:
+    image: mdl4eo/otbtf:3.3.3-cpu
+    platform: linux/amd64
+    stdin_open: true
+    tty: true
+    volumes:
+      - /dockervol:/mnt
