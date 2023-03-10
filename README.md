@@ -98,5 +98,5 @@ Using the image in `test-image` that is copied to `/tmp`, process with:
 python sr4rs/code/sr.py \
 --savedmodel sr4rs_sentinel2_bands4328_france2020_savedmodel \
 --input /mnt/s2_test_RGBNIR_cropped.tif \
---output /mnt/s2_test_RGBNIR_croppe_SR_.tif
+--output /mnt/s2_test_RGBNIR_cropped_SR_.tif
 ```
