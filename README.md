@@ -80,7 +80,7 @@ For more details, see the [documentation](doc/HOW_TO.md) and check the [pre-trai
 ## Docker compose
 The provided docker-compose.yml file is a configuration file that can be used to run a Docker container for the OTBTF (Orfeo Toolbox TensorFlow) image, version 3.3.3-cpu. This container is designed for running machine learning workflows with remote sensing data using the Orfeo Toolbox and TensorFlow libraries.
 
-The `docker-compose.yml` file defines a single service called otbtf, which uses the mdl4eo/otbtf:3.3.3-cpu image and is configured to run on the linux/amd64 platform. The stdin_open and tty options are set to true, allowing interactive mode for the container. Additionally, the file defines a volume mount that allows the /tmp directory on the host machine to be accessed from the container at the `/mnt` directory.
+The `docker-compose.yml` file defines a single service called otbtf, which uses the mdl4eo/otbtf:3.3.3-cpu image and is configured to run on the linux/amd64 platform. The stdin_open and tty options are set to true, allowing interactive mode for the container. Additionally, the file defines a volume mount that allows the `/tmp` directory on the host machine to be accessed from the container at the `/mnt` directory.
 
 To use this `docker-compose.yml` file, you first need to ensure that Docker and Docker Compose are installed on your machine. Once you have installed these tools, save the `docker-compose.yml` file in a directory of your choice and navigate to that directory in your terminal.
 
@@ -97,6 +97,6 @@ Using the image in `test-image` that is copied to `/tmp`, process with:
 ```
 python sr4rs/code/sr.py \
 --savedmodel sr4rs_sentinel2_bands4328_france2020_savedmodel \
---input /mnt/s2_test_RGBNIR.tif \
---output /mnt/s2_test_RGBNIR_SR.tif
+--input /mnt/s2_test_RGBNIR_cropped.tif \
+--output /mnt/s2_test_RGBNIR_cropped.tif
 ```
