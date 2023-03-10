@@ -76,3 +76,18 @@ Here is a summary of the steps to follow.
 3. Use `sr.py` on LR image using the previously generated SavedModel
 
 For more details, see the [documentation](doc/HOW_TO.md) and check the [pre-trained models](doc/PRETRAINED_MODELS.md).
+
+## Docker compose
+The provided docker-compose.yml file is a configuration file that can be used to run a Docker container for the OTBTF (Orfeo Toolbox TensorFlow) image, version 3.3.3-cpu. This container is designed for running machine learning workflows with remote sensing data using the Orfeo Toolbox and TensorFlow libraries.
+
+The `docker-compose.yml` file defines a single service called otbtf, which uses the mdl4eo/otbtf:3.3.3-cpu image and is configured to run on the linux/amd64 platform. The stdin_open and tty options are set to true, allowing interactive mode for the container. Additionally, the file defines a volume mount that allows the /tmp directory on the host machine to be accessed from the container at the `/mnt` directory.
+
+To use this `docker-compose.yml` file, you first need to ensure that Docker and Docker Compose are installed on your machine. Once you have installed these tools, save the `docker-compose.yml` file in a directory of your choice and navigate to that directory in your terminal.
+
+To start the container, run the following command:
+
+```bash
+docker-compose up
+```
+
+This will start the otbtf service with the specified configuration and launch a Bash shell inside the container. From here, you can run your machine learning workflows using the Orfeo Toolbox and TensorFlow libraries.
